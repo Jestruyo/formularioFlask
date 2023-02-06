@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    
+<h4>Iniciar Sesión</h4>
+
+<form action="" method="POST" novalidate>
+    {{ formI.hidden_tag() }}
+
+    <p>
+        {{ formI.nombre.label }} 
+        {{ formI.nombre() }}
+        {%for error in formI.nombre.errors %}
+            <span style="color: red";> {{ error }} </span>
+        {%endfor%}
+    </p>
+
+    <p>
+        {{ formI.passWd.label }} 
+        {{ formI.passWd() }}
+        {%for error in formI.passWd.errors %}
+            <span style="color: red";> {{ error }} </span>
+        {%endfor%}
+    </p>
+    
+    <p>
+        {{ formI.recordar() }} {{formI.recordar.label}}
+    </p>
+
+    <p>
+        {{formI.enviar()}}
+    </p>
+
+</form>
+
+{% endblock %}
