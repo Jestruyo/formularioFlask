@@ -19,7 +19,7 @@ def login():
         return redirect(url_for ('logueado'))
     return render_template('inicio.html',titulo='Iniciar sesion', formI=formulario)
 
-@app.route('/logueado/')
+@app.route('/logueado')
 def logueado():
     return render_template('logueado.html')
 
